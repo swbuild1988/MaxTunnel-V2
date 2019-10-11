@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bandweaver.maxtunnelem.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.bandweaver.maxtunnelem.entity.User">
+        <id column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="NAME" jdbcType="VARCHAR" property="name" />
+        <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+        <result column="CRT_TIME" jdbcType="TIMESTAMP" property="crtTime" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID, NAME, PASSWORD, CRT_TIME
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from T_SECURITY_USER
+        where ID = #{Id,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByMap"  resultMap="BaseResultMap" parameterType="Map">
+        select
+        <include refid="Base_Column_List" />
+        from T_SECURITY_USER
+        <where> 1 = 1
+            <if test="NAME != null">
+                and NAME = #{name}
+            </if>
+            <if test="password != null">
+                and PASSWORD = #{password}
+            </if>
+        </where>
+    </select>
+
+    <select id="listByMap"  resultMap="BaseResultMap" parameterType="Map">
+        select
+        <include refid="Base_Column_List" />
+        from T_SECURITY_USER
+        <where> 1 = 1
+            <if test="name != null">
+                and name like "%"#{name}"%"
+            </if>
+        </where>
+    </select>
+
+    <select id="getCountByMap" resultType="java.lang.Integer" parameterType="Map" >
+        select count(1) from T_SECURITY_USER
+        <where> 1 = 1
+            <if test="name != null">
+                and name like "%"#{name}"%"
+            </if>
+        </where>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from T_SECURITY_USER
+        where id = #{Id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.bandweaver.maxtunnelem.entity.User">
+        insert into T_SECURITY_USER (id, name, password)
+        values (#{Id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},
+        #{password,jdbcType=VARCHAR}
+       )
+    </insert>
+    <insert id="insertSelective" parameterType="com.bandweaver.maxtunnelem.entity.User">
+        insert into T_SECURITY_USER
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="Id != null">
+                id,
+            </if>
+            <if test="name != null">
+                name,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="Id != null">
+                #{Id,jdbcType=INTEGER},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.bandweaver.maxtunnelem.entity.User">
+        update T_SECURITY_USER
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{Id,jdbcType=INTEGER}
+    </update>
+
+</mapper>

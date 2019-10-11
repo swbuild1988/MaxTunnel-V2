@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bandweaver.maxtunnelshiro.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.bandweaver.maxtunnelshiro.entity.User">
+        <id column="ID" jdbcType="DECIMAL" property="id" />
+        <result column="NAME" jdbcType="VARCHAR" property="name" />
+        <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+        <result column="CRT_TIME" jdbcType="TIMESTAMP" property="crtTime" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID, NAME, PASSWORD, CRT_TIME
+    </sql>
+
+    <select id="getByName" resultMap="BaseResultMap">
+        select * from t_security_user
+        where name = #{name}
+    </select>
+
+    <select id="getUserPermissions" resultType="java.lang.String">
+        SELECT
+        p.permission_code
+        FROM
+        t_security_user u
+        LEFT JOIN t_security_user_role ur ON ur.u_id = u.id
+        left join t_security_role r on ur.r_id = r.id
+        LEFT JOIN t_security_role_permission rp ON r.id = rp.r_id
+        LEFT JOIN t_security_permission p ON rp.p_id = p.id
+        WHERE
+        u.name = #{name}
+    </select>
+
+</mapper>

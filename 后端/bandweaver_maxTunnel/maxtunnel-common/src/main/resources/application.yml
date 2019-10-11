@@ -1,0 +1,20 @@
+#服务端口
+server:
+  port: 6000
+
+spring:
+  application:
+    name: maxtunnel-gateway
+
+
+#以IP地址注册到服务中心
+eureka:
+  instance:
+    prefer-ip-address: true
+#要注册的注册中心地址
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1025/eureka/
+
+
+

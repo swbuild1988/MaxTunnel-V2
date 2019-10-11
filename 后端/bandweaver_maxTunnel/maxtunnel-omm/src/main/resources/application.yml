@@ -1,0 +1,37 @@
+server:
+  port: 3000
+
+spring:
+  application:
+    name: maxtunnel-omm
+  # dev环境
+  profiles:
+    active: dev
+
+#feign 配置
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      feignName:
+        connectTimeout: 60000
+        readTimeout: 60000
+  #对请求和响应进行GZIP压缩，以提高通信效率
+  compression:
+      request:
+        enabled: true
+      response:
+        enabled: true
+
+
+# 注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://admin:admin123@localhost:1025/eureka/
+
+
+

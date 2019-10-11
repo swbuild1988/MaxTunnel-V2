@@ -1,0 +1,75 @@
+#服务端口
+server:
+  port: 9090
+
+spring:
+  application:
+    name: maxtunnel-gateway
+  profiles:
+    active: dev
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      # 路由到其他服务,url需要用[lb://]+[serviceId]
+      # 认证中心
+      - id: maxtunnel-shiro
+        uri: lb://maxtunnel-shiro
+        predicates:
+        - Path=/auth/**
+        filters:
+        - StripPrefix=1 # 去除请求地址中的to_client
+
+      # em 模块
+      - id: maxtunnel-em
+        uri: lb://maxtunnel-em
+        predicates:
+        - Path=/em/**
+        filters:
+        - StripPrefix=1 # 去除请求地址中的to_client
+        # 降级配置
+        - name: Hystrix
+          args:
+            name: default
+            fallbackUri: 'forward:/fallback'
+
+      # omm 模块
+      - id: maxtunnel-omm
+        uri: lb://maxtunnel-omm
+        predicates:
+        - Path=/omm/**
+        filters:
+        - StripPrefix=1 # 去除请求地址中的to_client
+        # 降级配置
+        - name: Hystrix
+          args:
+            name: default
+            fallbackUri: 'forward:/fallback'
+
+#feign 配置
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      feignName:
+        connectTimeout: 60000
+        readTimeout: 60000
+  compression:
+      request:
+        enabled: true
+      response:
+        enabled: true
+
+#以IP地址注册到服务中心
+eureka:
+  instance:
+    prefer-ip-address: true
+#要注册的注册中心地址
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin123@localhost:1025/eureka/
+
+

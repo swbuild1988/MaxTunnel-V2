@@ -1,0 +1,47 @@
+#服务端口
+server:
+  port: 1025
+
+
+
+spring:
+  application:
+    name: maxtunnel-eureka
+  #安全认证配置
+  security:
+    basic:
+      enabled: true
+    user:
+      name: admin  # 用户名
+      password: admin123   # 用户密码
+
+
+#feign 配置
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      feignName:
+        connectTimeout: 60000
+        readTimeout: 60000
+  #对请求和响应进行GZIP压缩，以提高通信效率
+  compression:
+      request:
+        enabled: true
+      response:
+        enabled: true
+
+#注册中心名称
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: localhost
+  client:
+    register-with-eureka: false  #是否向注册中心注册自己
+    fetch-registry: false  #是否从注册中心检索所有注册的服务
+    service-url: #注册中心默认的地址
+      defaultZone: http://admin:admin123@localhost:${server.port}/eureka/
+
+
+
