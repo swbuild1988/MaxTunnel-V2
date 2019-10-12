@@ -1,0 +1,21 @@
+@charset "utf-8";
+@import './variables.less';
+
+
+/*根据dpr计算font-size*/
+.font-dpr(@font-size) {
+	font-size: @font-size;
+}
+// 设置字体大小
+.font-size(@size) {
+    .font-dpr(@size)
+}
+// 设置字体颜色
+.font-color(@color) {
+    color: @color;
+}
+// 设置主题颜色
+.bg-color(@color) {
+    background-color: @color;
+}
+
