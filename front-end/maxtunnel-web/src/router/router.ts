@@ -7,12 +7,16 @@
 export default [
     {
         path: '/',
-        redirect: '/login'
+        redirect: '/BV/projectSurvey/tunnelInfo'
     },
     {
         path: '/login',
         name: 'login',
         component: () => import('@/views/VM/Login/Login/Login.vue')
-    }
-    
+    },
+    {
+        path: '/BV/projectSurvey/tunnelInfo',
+        name: '大屏信息展示-管廊信息',
+        component: () => import('@/views/BM/ProjectSurvey/TunnelInfo/TunnelInfo.vue')
+    }   
 ]

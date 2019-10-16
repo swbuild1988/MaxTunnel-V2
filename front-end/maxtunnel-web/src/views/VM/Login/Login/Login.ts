@@ -1,6 +1,10 @@
 import { Component, Vue } from "vue-property-decorator"
-import { LoginData } from '@/types/views/Login.interface'
-// import {  } from "@/components" // 组件
+import { LoginData, LoginInfo } from '@/types/views/Login.interface'
+import { Button, Form, FormItem, Input } from 'view-design'
+Vue.component('Button', Button);
+Vue.component('Form', Form);
+Vue.component('FormItem', FormItem)
+Vue.component('Input', Input)
 
 @Component({})
 export default class About extends Vue {
@@ -9,14 +13,13 @@ export default class About extends Vue {
     data: LoginData = {
         pageName: 'Login'
     }
-
-    mounted() {
-        //
+    loginInfo: LoginInfo = {
+        username: '',
+        password: ''
     }
 
-    // 初始化函数
-    init() {
-        //
+    login() {
+        this.$router.push('/BV/projectSurvey/tunnelInfo')
     }
     
 }

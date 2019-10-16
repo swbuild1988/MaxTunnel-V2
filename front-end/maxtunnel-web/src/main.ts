@@ -6,7 +6,7 @@ import "@/assets/less/common.less";
 import "@/assets/less/theme.less";
 import "amfe-flexible";
 import echarts from 'echarts';
-import 'iview/dist/styles/iview.css';
+import 'view-design/dist/styles/iview.css';
 
 Vue.prototype.$echarts = echarts;
 Vue.config.productionTip = false;
