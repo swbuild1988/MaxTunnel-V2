@@ -1,4 +1,4 @@
-package com.bandweaer.maxtunneleureka;
+package com.bandweaver.maxtunneloam;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MaxtunnelEurekaApplicationTests {
+public class MaxtunnelOamApplicationTests {
 
 	@Test
 	public void contextLoads() {

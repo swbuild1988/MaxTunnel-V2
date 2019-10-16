@@ -27,12 +27,15 @@
 
     <modules>
         <module>maxtunnel-eureka</module>
-        <module>maxtunnel-common</module>
         <module>maxtunnel-gateway</module>
-        <module>maxtunnel-em</module>
-        <module>maxtunnel-shiro</module>
-        <module>maxtunnel-omm</module>
+        <module>maxtunnel-common</module>
         <module>maxtunnel-feign</module>
+        <module>maxtunnel-base</module>
+        <module>maxtunnel-em</module>
+        <module>maxtunnel-omm</module>
+        <module>maxtunnel-oam</module>
+        <module>maxtunnel-mam</module>
+        <module>maxtunnel-shiro</module>
     </modules>
 
     <dependencies>

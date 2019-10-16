@@ -1,6 +1,6 @@
 
 
-package com.bandweaer.maxtunneleureka.security;
+package com.bandweaver.maxtunneleureka.security;
 
 /**
  * 由于添加 Security 注册服务认证,
