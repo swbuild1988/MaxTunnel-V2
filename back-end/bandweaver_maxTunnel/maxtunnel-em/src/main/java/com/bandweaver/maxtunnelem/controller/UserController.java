@@ -1,7 +1,7 @@
 package com.bandweaver.maxtunnelem.controller;
 
 import com.bandweaver.maxtunnelcommon.utils.R;
-import com.bandweaver.maxtunnelcommon.utils.RedisUtil;
+import com.bandweaver.maxtunnelem.configuration.RedisUtil;
 import com.bandweaver.maxtunnelem.entity.SecurityUser;
 import com.bandweaver.maxtunnelem.entity.User;
 import com.bandweaver.maxtunnelem.service.SecurityUserService;
