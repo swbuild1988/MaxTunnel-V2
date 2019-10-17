@@ -1,6 +1,5 @@
 package com.bandweaver.maxtunnelcommon.utils;
 
-import com.bandweaver.tunnel.common.biz.constant.TimeEnum;
 
 import java.text.DateFormat;
 import java.text.ParsePosition;
@@ -661,42 +660,6 @@ public class DateUtil {
 				59, 59);
 		c.set(Calendar.MILLISECOND, 999);
 		return c.getTime();
-	}
-
-	/**
-	 * 按照周期分别查找
-	 * 
-	 * @param em TimeEnum枚举
-	 * @return
-	 * @author shaosen
-	 * @Date 2018年11月6日
-	 */
-	public static List<Map<String, Date>> getStartTimeAndEndTimeByIntervalvalue(TimeEnum em) {
-		List<Map<String, Date>> list = new ArrayList<>();
-		if (em == TimeEnum.WEEK) {
-			Date beginDayOfWeek = DateUtil.getBeginDayOfWeek();// 获取本周的开始时间
-			Map<String, Date> map = new HashMap<>();
-			map.put("startDay", beginDayOfWeek);
-			map.put("endDay", new Date());
-			list.add(map);
-			list = getStartTimeAndEndTimeByWeek(beginDayOfWeek, list);
-		} else if (em == TimeEnum.MONTH) {
-			Date beginDayOfMonth = DateUtil.getBeginDayOfMonth();
-			Map<String, Date> map = new HashMap<>();
-			map.put("startDay", beginDayOfMonth);
-			map.put("endDay", new Date());
-			list.add(map);
-			list = getStartTimeAndEndTimeByMonth(beginDayOfMonth, list);
-		} else if (em == TimeEnum.DAY) {
-			Date dayBegin = DateUtil.getDayBegin();
-			Map<String, Date> map = new HashMap<>();
-			map.put("startDay", dayBegin);
-			map.put("endDay", new Date());
-			list.add(map);
-			list = getStartTimeAndEndTimeByDay(dayBegin, list);
-		}
-
-		return list;
 	}
 
 	private static List<Map<String, Date>> getStartTimeAndEndTimeByDay(Date date, List<Map<String, Date>> list) {

@@ -1,7 +1,7 @@
 package com.bandweaver.maxtunnelcommon.utils;
 
-import com.bandweaver.tunnel.common.platform.log.LogUtil;
 
+import lombok.extern.slf4j.Slf4j;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectInputStream;
@@ -12,6 +12,7 @@ import java.io.ObjectOutputStream;
  * @author shaosen
  * @date 2018年7月31日
  */
+@Slf4j
 public class ByteArrayUtil {
 
 	 /**
@@ -32,7 +33,7 @@ public class ByteArrayUtil {
             bo.close();  
             oo.close();  
         } catch (Exception e) {  
-            LogUtil.error("translation" + e.toString());
+            log.error("translation" + e.toString());
         }
         return bytes;  
     } 
@@ -53,7 +54,7 @@ public class ByteArrayUtil {
             bi.close();
             oi.close();
         } catch (Exception e) {
-        	LogUtil.error("translation" + e.toString());
+            log.error("translation" + e.toString());
         }
         return obj;
     }

@@ -1,13 +1,11 @@
 package com.bandweaver.maxtunnelcommon.utils;
 
-import com.bandweaver.tunnel.common.platform.log.LogUtil;
-import org.apache.log4j.Logger;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 
+@Slf4j
 public class FileUtil {
-
-    static Logger log = Logger.getLogger(FileUtil.class);
 
     /**
      * 判断文件是否存在
@@ -81,15 +79,15 @@ public class FileUtil {
 			String result = new String(array);
 			return result;
 		} catch (FileNotFoundException e) {
-			LogUtil.error(e.toString());
+			log.error(e.toString());
 		} catch (IOException e) {
-			LogUtil.error(e.toString());
+            log.error(e.toString());
 		}finally {
 			if(fis != null) {
 				try {
 					fis.close();
 				} catch (IOException e) {
-					LogUtil.error("io流关闭失败：" + e.toString());
+                    log.error("io流关闭失败：" + e.toString());
 				}
 			}
 		}
@@ -109,13 +107,13 @@ public class FileUtil {
 			bw = new BufferedWriter(new FileWriter(new File(filePath)));
 			bw.write(content);
 		} catch (IOException e) {
-			LogUtil.error(e.toString());
+            log.error(e.toString());
 		}finally {
 			if(bw != null) {
 				try {
 					bw.close();
 				} catch (IOException e) {
-					LogUtil.error("io流关闭失败：" + e.toString());
+                    log.error("io流关闭失败：" + e.toString());
 				}
 			}
 		}

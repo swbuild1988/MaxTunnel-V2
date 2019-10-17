@@ -1,14 +1,15 @@
 package com.bandweaver.maxtunnelcommon.utils;
 
-import com.bandweaver.tunnel.common.platform.log.LogUtil;
 import com.jacob.activeX.ActiveXComponent;
 import com.jacob.com.ComThread;
 import com.jacob.com.Dispatch;
 import com.jacob.com.Variant;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 文件转pdf工具类
  */
+@Slf4j
 public class PDFUtil{
 
 
@@ -44,7 +45,7 @@ public class PDFUtil{
             Dispatch.call(doc, "ExportAsFixedFormat", pdfFilePath, WORD_TO_PDF_OPERAND); // word保存为pdf格式宏，值为17
 
         } catch (Exception e) {
-            LogUtil.error(e);
+            log.error(e.getMessage());
         } finally {
             if (doc != null) {
                 Dispatch.call(doc, "Close", false);
@@ -80,7 +81,7 @@ public class PDFUtil{
             Dispatch.call(ppt, "SaveAs", pdfFilePath, PPT_TO_PDF_OPERAND); // ppSaveAsPDF为特定值32
 
         } catch (Exception e) {
-            LogUtil.error(e);
+            log.error(e.toString());
         } finally {
             if (ppt != null) {
                 Dispatch.call(ppt, "Close");
@@ -127,7 +128,7 @@ public class PDFUtil{
 
         } catch (Exception e) {
             e.printStackTrace();
-            LogUtil.error(e);
+            log.error(e.toString());
         } finally {
             if (excel != null) {
                 Dispatch.call(excel, "Close", new Variant(false));

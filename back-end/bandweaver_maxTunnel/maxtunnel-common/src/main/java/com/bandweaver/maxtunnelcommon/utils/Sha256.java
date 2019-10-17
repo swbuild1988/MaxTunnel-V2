@@ -1,11 +1,14 @@
 package com.bandweaver.maxtunnelcommon.utils;
 
-import com.bandweaver.tunnel.common.platform.log.LogUtil;
+
+
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
+@Slf4j
 public class Sha256 {
 
 	/**
@@ -22,9 +25,9 @@ public class Sha256 {
 			messageDigest.update(str.getBytes("UTF-8"));
 			encodeStr = byte2Hex(messageDigest.digest());
 		} catch (NoSuchAlgorithmException e) {
-			LogUtil.error(e.toString());
+			log.error(e.toString());
 		} catch (UnsupportedEncodingException e) {
-			LogUtil.error(e.toString());
+			log.error(e.toString());
 		}
 		return encodeStr;
 	}

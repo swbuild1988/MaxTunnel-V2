@@ -1,8 +1,7 @@
 package com.bandweaver.maxtunnelshiro.controller;
 
-import com.bandweaver.maxtunnelcommon.utils.JwtUtil;
 import com.bandweaver.maxtunnelcommon.utils.R;
-import com.bandweaver.maxtunnelcommon.utils.RedisUtil;
+import com.bandweaver.maxtunnelshiro.configuration.RedisUtil;
 import com.bandweaver.maxtunnelshiro.entity.User;
 import com.bandweaver.maxtunnelshiro.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
 import java.util.Set;
 
 @Slf4j
@@ -27,14 +24,7 @@ public class LoginController {
     private UserService userService;
 
     @Autowired
-    private JwtUtil jwtUtil;
-
-    @Autowired
     private RedisUtil redisUtil;
-
-
-
-
 
     @RequestMapping("/login")
     public R login(@RequestBody User user) {// 登录测试

@@ -1,7 +1,7 @@
 package com.bandweaver.maxtunnelcommon.utils;
 
-import com.bandweaver.tunnel.common.biz.pojo.Item;
-import com.bandweaver.tunnel.common.platform.log.LogUtil;
+
+import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.hssf.usermodel.HSSFFormulaEvaluator;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -17,6 +17,7 @@ import java.util.List;
 /**
  * POI导出excel工具类
  */
+@Slf4j
 public class ExcelUtil {
 
 
@@ -57,7 +58,7 @@ public class ExcelUtil {
                 try {
                     fis.close();
                 } catch (IOException e) {
-                    LogUtil.error(e);
+                    log.error(e.getMessage());
                 }
             }
 
@@ -65,7 +66,7 @@ public class ExcelUtil {
                 try {
                     out.close();
                 } catch (IOException e) {
-                    LogUtil.error(e);
+                    log.error(e.getMessage());
                 }
             }
         }

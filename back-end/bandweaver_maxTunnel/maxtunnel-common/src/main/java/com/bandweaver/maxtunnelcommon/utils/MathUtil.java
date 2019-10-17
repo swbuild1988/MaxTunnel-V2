@@ -1,7 +1,8 @@
 package com.bandweaver.maxtunnelcommon.utils;
 
-import com.bandweaver.tunnel.common.platform.log.LogUtil;
+
 import javafx.geometry.Point2D;
+import lombok.extern.slf4j.Slf4j;
 
 import java.math.BigDecimal;
 import java.util.Random;
@@ -12,6 +13,7 @@ import java.util.Random;
  * @author shaosen
  * @date 2018年8月17日
  */
+@Slf4j
 public class MathUtil {
 
     private static final int DEF_DIV_SCALE = 10;
@@ -100,7 +102,7 @@ public class MathUtil {
         if (p1.getX() == p2.getX()) {
             //斜率不存在，直线垂直于x轴
             //投影点横坐标为p1.x,竖坐标为pOut.y
-            LogUtil.info(" 直线垂直于x轴 ");
+            log.info(" 直线垂直于x轴 ");
             return new Point2D(p1.getX(), pOut.getY());
         }
 
@@ -126,7 +128,7 @@ public class MathUtil {
     public static Point2D getProjectivePoint(Point2D p1, double k, double b, Point2D pOut) {
         if (k == 0) {
             // 两点连线平行于x轴
-            LogUtil.info(" 连线平行于x轴 ");
+            log.info(" 连线平行于x轴 ");
             return new Point2D(pOut.getX(), p1.getY());
         } else {
             double x = (k * p1.getX() + pOut.getX() / k + pOut.getY() - p1.getY()) / (1 / k + k);

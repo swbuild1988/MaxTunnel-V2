@@ -1,5 +1,6 @@
 package com.bandweaver.maxtunnelcommon.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpResponse;
 
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import java.util.Map;
  * @author shaosen
  * @date 2018年8月1日
  */
+@Slf4j
 public class MessageUtil {
 
     public static void sendMessage(String tel) {
@@ -49,7 +51,7 @@ public class MessageUtil {
                 //获取response的body
                 //System.out.println(EntityUtils.toString(response.getEntity()));
             } catch (Exception e) {
-                //LogUtil.error(e.toString());
+                log.error(e.toString());
             }
     }
 }
