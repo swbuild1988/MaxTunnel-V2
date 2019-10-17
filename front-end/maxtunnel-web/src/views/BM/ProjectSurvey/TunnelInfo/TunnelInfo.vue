@@ -11,11 +11,12 @@
                         开始至{{ item.beginLocal }}，结束至{{ item.endLocal }}，
                     </p>
                     <p slot="content">
-                        廊内有管舱{{ item.storeNum }}个，区间{{ item.areaNum }}
+                        廊内有管舱{{ item.storeNum }}个，区间{{ item.areaNum }}个
                     </p>
                 </Panel>
             </Collapse>
         </div>
+        <BrokenLine :brokenLineData = "brokenLineData" />
     </div>
 </template>
 
