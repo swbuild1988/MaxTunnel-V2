@@ -1,6 +1,6 @@
 <template>
     <div class="BrokenLine-wrap">
-        <canvas id="myCanvas" style="border: 1px solid red"></canvas>
+        <canvas :id=brokenLineProp.id></canvas>
     </div>
 </template>
 
@@ -11,29 +11,15 @@
     @Component({})
     export default class About extends Vue {
         @Prop({ required: true})
-        brokenLineData: any
+        brokenLineProp: any
 
-        // data
-        data: BrokenLineData = {
-            componentName: 'BrokenLine',
-            dot: 4,
-            x: 200,
-            y: 100,
-            lineColor: '#118AC9'
-        }
-
-        @Watch('brokenLineData', {deep: true})
-        watchBrokenLineData(newVal: BrokenLineData) {
-            this.data.dot = newVal.dot
-            this.data.x = newVal.x
-            this.data.y = newVal.y
-            this.data.lineColor = newVal.lineColor
-            this.init(this.data.dot, this.data.x, this.data.y, this.data.lineColor)
+        mounted() {
+            this.init(this.brokenLineProp.dot, this.brokenLineProp.x, this.brokenLineProp.y, this.brokenLineProp.lineColor)
         }
 
         // 初始化函数
         init(dot: number, x: number, y: number, lineColor: string) {
-            let c = document.getElementById("myCanvas") as HTMLCanvasElement;
+            let c = document.getElementById(this.brokenLineProp.id) as HTMLCanvasElement;
             c.setAttribute('height', y + 'px')
             c.setAttribute('width', x + 'px')
             let ctx = c.getContext("2d") as CanvasRenderingContext2D;

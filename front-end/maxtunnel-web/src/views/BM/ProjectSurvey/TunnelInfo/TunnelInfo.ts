@@ -58,8 +58,9 @@ export default class About extends Vue {
 	}
 
 	brokenLineData: BrokenLineData = {
+		id: 'line1',
 		dot: 4,
-		x: 500,
+		x: 200,
 		y: 100,
 		lineColor: "#118AC9"
 	}
