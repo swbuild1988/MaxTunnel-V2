@@ -11,9 +11,9 @@ const basePath = path.resolve(__dirname, '../src')
 const dirName = process.argv[2]
 const capPirName = dirName.substring(0, 1).toUpperCase() + dirName.substring(1)
 if (!dirName) {
-    console.log('文件夹名称不能为空！')
-    console.log('示例：npm run tep ${capPirName}')
-    process.exit(0)
+  console.log('文件夹名称不能为空！')
+  console.log('示例：npm run tep ${capPirName}')
+  process.exit(0)
 }
 
 /**
@@ -28,13 +28,12 @@ const VueTep = `<template>
 <script lang="ts">
     import { Component, Vue, Prop } from "vue-property-decorator"
     import { ${capPirName}Data } from '@/types/components/${dirName}.interface'
-    // import {  } from "@/components" // 组件
 
     @Component({})
     export default class About extends Vue {
         // prop
         @Prop({
-        required: false,
+            required: false,
             default: ''
         }) name!: string
 
@@ -42,15 +41,10 @@ const VueTep = `<template>
         data: ${capPirName}Data = {
             componentName: '${dirName}'
         }
-
-        // mounted() {
-        // }
-
     }
 </script>
 
 <style lang="less">
-
     .${dirName}-wrap {
         width: 100%;
     }
@@ -61,10 +55,11 @@ const VueTep = `<template>
 // interface 模版
 const interfaceTep = `// ${dirName}.Data 参数类型
 export interface ${capPirName}Data {
-    componentName: string
+  componentName: string
 }
 
 `
+
 fs.mkdirSync(`${basePath}/components/${dirName}`) // mkdir
 
 process.chdir(`${basePath}/components/${dirName}`) // cd views

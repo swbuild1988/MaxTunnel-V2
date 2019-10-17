@@ -18,7 +18,7 @@ module.exports = {
         // 配置路径别名
         config.resolve.alias
             .set('@', resolve('src'))
-            .set('_c', resolve('src/components'))
+            .set('_c', resolve('src/component'))
             const types = ["vue-modules", "vue", "normal-modules", "normal"]
             types.forEach(type =>
                 addStyleResource(config.module.rule("less").oneOf(type))
