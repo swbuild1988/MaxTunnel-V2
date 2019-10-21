@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
- * @author mimi
  * @date 2018/8/15
  * 社交登录类型
  */

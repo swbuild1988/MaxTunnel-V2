@@ -1,0 +1,40 @@
+server:
+  port: 2000
+
+spring:
+  application:
+    name: maxtunnel-base
+  # dev环境
+  profiles:
+    active: dev
+  # 数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/common?characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=Asia/Shanghai
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+# mybaits 模块配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.bandweaver.maxtunnelbase.entity
+
+feign:
+   hystrix:
+     enabled: true
+
+# 注册中心配置
+eureka:
+  instance:
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 4
+    lease-expiration-duration-in-seconds: 12
+  client:
+    serviceUrl:
+      defaultZone: http://admin:admin123@localhost:1025/eureka/
+
+
+

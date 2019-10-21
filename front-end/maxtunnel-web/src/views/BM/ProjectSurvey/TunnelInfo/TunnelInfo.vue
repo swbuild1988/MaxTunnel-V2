@@ -16,7 +16,7 @@
                 </Panel>
             </Collapse>
         </div>
-        <BrokenLine :brokenLineData = "brokenLineData" />
+        <BrokenLine :brokenLineProp = "brokenLineData" />
     </div>
 </template>
 

@@ -10,6 +10,7 @@ export interface TunnelInfoState {
 }
 
 export interface BrokenLineData {
+    id?: string | number
     dot?: number,
     x?: number,
     y?: number,

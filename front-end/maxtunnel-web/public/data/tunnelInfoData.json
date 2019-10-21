@@ -1,0 +1,39 @@
+[
+    { 
+        "id": "1",
+        "tunnelName": "古城大街",
+        "tunnelLength": "3.68",
+        "beginLocal": "XXXX",
+        "endLocal": "XXXX",
+        "storeNum": "36",
+        "areaNum": "56"
+
+    },
+    {
+        "id": "2",
+        "tunnelName": "经二路",
+        "tunnelLength": "0.58",
+        "beginLocal": "XXXX",
+        "endLocal": "XXXX",
+        "storeNum": "45",
+        "areaNum": "36"
+    },
+    {
+        "id": "3",
+        "tunnelName": "经三路",
+        "tunnelLength": "4.15",
+        "beginLocal": "XXXX",
+        "endLocal": "XXXX",
+        "storeNum": "32",
+        "areaNum": "11"
+    },
+    {
+    	"id": "4",
+        "tunnelName": "实验路",
+        "tunnelLength": "5.2",
+        "beginLocal": "XXXX",
+        "endLocal": "VVVV",
+        "storeNum": "15",
+        "areaNum": "42"
+    }
+]

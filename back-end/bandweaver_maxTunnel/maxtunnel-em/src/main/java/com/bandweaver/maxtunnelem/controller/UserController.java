@@ -1,9 +1,13 @@
 package com.bandweaver.maxtunnelem.controller;
 
 import com.bandweaver.maxtunnelcommon.utils.R;
+import com.bandweaver.maxtunnelem.configuration.RedisUtil;
+import com.bandweaver.maxtunnelem.entity.SecurityUser;
 import com.bandweaver.maxtunnelem.entity.User;
+import com.bandweaver.maxtunnelem.service.SecurityUserService;
 import com.bandweaver.maxtunnelem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +21,11 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private SecurityUserService securityUserService;
+
+    @Autowired
+    private RedisUtil redisUtil;
 
     @RequestMapping("/login")
     public R userLogin(Integer id){
@@ -43,6 +52,18 @@ public class UserController {
     public R test(Integer id){
         Integer[] integers = {1,2,3,4,5,6};
         return new R(integers);
+    }
+
+    @GetMapping("/redis")
+    public String getRedis(String key) {
+        String redisKey = redisUtil.get(key);
+        return redisKey;
+    }
+
+    @RequestMapping("/list2")
+    public List<SecurityUser> pageList2(){
+        List<SecurityUser> userList = securityUserService.listAllUser();
+        return userList;
     }
 
 }

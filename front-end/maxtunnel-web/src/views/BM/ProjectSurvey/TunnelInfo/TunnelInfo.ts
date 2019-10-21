@@ -3,6 +3,7 @@ import { TunnelInfoData, BrokenLineData } from '@/types/views/TunnelInfo.interfa
 import { Collapse } from 'view-design'
 import Panel from 'view-design/src/components/collapse/panel.vue'
 import BrokenLine from '@/components/BrokenLine/BrokenLine.vue'
+import { TunnelInfoService } from '@/services/tunnelInfoService.ts'
 
 Vue.component('Collapse', Collapse)
 Vue.component('Panel', Panel)
@@ -17,50 +18,30 @@ export default class About extends Vue {
 	// data
 	data: TunnelInfoData = {
 		value: '1',
-		tunnelInfoSur: [
-			{
-				id: "1",
-				tunnelName: '古城大街',
-				tunnelLength: '3.68',
-				beginLocal: 'XXXX',
-				endLocal: 'XXXX',
-				storeNum: '36',
-				areaNum: '56'
-			},
-			{
-				id: "2",
-				tunnelName: '经二路',
-				tunnelLength: '3.68',
-				beginLocal: 'XXXX',
-				endLocal: 'XXXX',
-				storeNum: '36',
-				areaNum: '56'
-			},
-			{
-				id: "3",
-				tunnelName: '经三路',
-				tunnelLength: '3.68',
-				beginLocal: 'XXXX',
-				endLocal: 'XXXX',
-				storeNum: '36',
-				areaNum: '56'
-			},
-			{
-				id: "4",
-				tunnelName: '实验路',
-				tunnelLength: '5.2',
-				beginLocal: 'XXXX',
-				endLocal: 'VVVV',
-				storeNum: '15',
-				areaNum: '42'
-			}
-		]
+		tunnelInfoSur: []
 	}
 
 	brokenLineData: BrokenLineData = {
+		id: 'line1',
 		dot: 4,
-		x: 500,
+		x: 200,
 		y: 100,
 		lineColor: "#118AC9"
+	}
+
+	mounted() {	
+		this.init()
+	}
+
+	init() {
+		TunnelInfoService.getTunnelInfo().then(
+			(result: any) => {
+				this.data.value = "1"
+				this.data.tunnelInfoSur = result
+			},
+			(error: any) => {
+				console.log(error)
+			}
+		)
 	}
 }

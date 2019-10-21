@@ -55,7 +55,7 @@ const VueTep = `<template>
 // interface 模版
 const interfaceTep = `// ${dirName}.Data 参数类型
 export interface ${capPirName}Data {
-  componentName: string
+    componentName: string
 }
 
 `
