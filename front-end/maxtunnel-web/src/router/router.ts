@@ -22,5 +22,11 @@ export default [
         name: '大屏信息展示-管廊信息',
         // component: () => import('@/views/BM/ProjectSurvey/TunnelInfo/TunnelInfo.vue')
         component: (resolve: any) => require(["@/views/BM/ProjectSurvey/TunnelInfo/TunnelInfo.vue"], resolve),
-    }   
+    },
+    {
+        path: '/BV/BIM/bim',
+        name: '大屏信息展示-管廊信息',
+        // component: () => import('@/views/BM/ProjectSurvey/TunnelInfo/TunnelInfo.vue')
+        component: (resolve: any) => require(["@/views/BM/BIM/bim/bim.vue"], resolve),
+    }    
 ]
