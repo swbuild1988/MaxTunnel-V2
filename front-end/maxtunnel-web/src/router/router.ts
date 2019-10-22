@@ -9,7 +9,7 @@ import { resolve } from 'url';
 export default [
     {
         path: '/',
-        redirect: '/BV/projectSurvey/tunnelInfo'
+        redirect: '/OM/operatManage'
     },
     {
         path: '/login',
@@ -21,6 +21,27 @@ export default [
         path: '/BV/projectSurvey/tunnelInfo',
         name: '大屏信息展示-管廊信息',
         // component: () => import('@/views/BM/ProjectSurvey/TunnelInfo/TunnelInfo.vue')
-        component: (resolve: any) => require(["@/views/BM/ProjectSurvey/TunnelInfo/TunnelInfo.vue"], resolve),
+        component: (resolve: any) => 
+            require(["@/views/BM/ProjectSurvey/TunnelInfo/TunnelInfo.vue"], resolve),
+    },
+    {
+        path: '/OM',
+        name: 'OM',
+        component: (resolve: any) => 
+            require(["@/views/OM/Overview/OverviewMain/OverviewMain.vue"], resolve),
+        children: [
+            {
+                path: '/OM/environment',
+                name: '环境监测',
+                component: (resolve: any) => 
+                    require(["@/views/OM/Overview/EnvironmnetMonitor/EnvironmnetMonitor.vue"], resolve)
+            },
+            {
+                path: '/OM/operatManage',
+                name: '运营管理',
+                component: (resolve: any) => 
+                    require(["@/views/OM/Overview/OperatManage/OperatManage.vue"], resolve)
+            }
+        ]
     }   
 ]

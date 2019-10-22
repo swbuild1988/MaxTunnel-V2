@@ -16,6 +16,8 @@
                 </Panel>
             </Collapse>
         </div>
+        <Button type="primary">primary</Button>
+        <Button type="error">error</Button>
         <BrokenLine :brokenLineProp = "brokenLineData" />
     </div>
 </template>
