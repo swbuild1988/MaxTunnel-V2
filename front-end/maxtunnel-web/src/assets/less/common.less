@@ -2,3 +2,36 @@
     margin: 0;
     padding: 0;
 }
+html, body {
+    overflow: hidden;
+}
+ul li {
+    list-style: none;
+}
+// 重写iview-btn样式
+.ivu-btn-primary {
+    color: #fff;
+    background-image: linear-gradient(to right , #2781fc, #83bcff);
+    border:1px solid #83bcff;
+}
+.ivu-btn-error {
+    color: #fff;
+    background-image: linear-gradient(to right , #ff4a4a, #ff8484);
+    border:1px solid #ff8484;
+}
+.ivu-btn-warning {
+    color: #fff;
+    background-image: linear-gradient(to right , #d5ba11, #f2df9b);
+    border:1px solid #f2df9b;
+}
+.ivu-btn-primary.btn-return {
+    position: absolute;
+    right: 66px;
+    top: 83px;
+    font-size: 28px;
+    line-height: 50px;
+    height: 50px;
+    color: #fff;
+    background-image: linear-gradient(to right , #0066ff, #67a2fb);
+    border: 1px solid #67a2fb;
+}

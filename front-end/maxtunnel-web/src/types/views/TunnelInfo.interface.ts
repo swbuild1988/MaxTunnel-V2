@@ -1,6 +1,6 @@
 // TunnelInfo.Data 参数类型
 export interface TunnelInfoData {
-    value: string,
+    value?: string,
     tunnelInfoSur: any[]
 }
 
