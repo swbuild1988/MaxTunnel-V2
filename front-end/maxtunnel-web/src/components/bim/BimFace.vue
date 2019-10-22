@@ -27,10 +27,10 @@
         // data
         data: BimFaceData = {
             componentName: 'BimFace',
-            view3D: null,
+            viewer3D: null,
             app: null,
             wt: null,
-            viewToken: 'c8881b84ede344a9bb3e886caa7dec1f'
+            viewToken: 'ab3b4e6c3cad4d3395ed654e1d6547ad'
         }
 
         mounted() {
@@ -65,12 +65,12 @@
 				this.data.viewer3D.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ViewAdded, () => {
                 //自适应屏幕大小
                     let _this = this
-                    window.onresize=function(){
+                    window.onresize = function(){
                         _this.data.viewer3D.resize(document.documentElement.clientWidth,document.documentElement.clientHeight-40)
                 }
 				// 调用viewer3D对象的Method，可以继续扩展功能
 				// 渲染3D模型
-				    this.data.viewer3D.render();
+				this.data.viewer3D.render();
 				}); 
             }
         }
@@ -125,7 +125,7 @@
     }
     .model {flex: 1}
     .button {
-        margin: 5px auto; 
+        margin: 1vmin auto; 
         width: 16vmin; 
         height: 5vmin; 
         background: #11DAB7; 
