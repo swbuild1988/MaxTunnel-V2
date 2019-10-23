@@ -1,0 +1,68 @@
+
+.TunnelIntroduction-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .imgBG-wrap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .page-title {
+        font-size: 46px;
+        text-align: center;
+    }
+    .tunnel-collapse-wrap {
+        position: absolute;
+        top: 200px;
+        .title {
+            font-size: 18px;
+            margin-top: 20px;
+            padding-left: 30px;
+            color: #00ffeb;
+            .guide-icon {
+                vertical-align: middle;
+            }
+        }
+        .ivu-collapse {
+            border: none;
+            padding-top: 15px;
+            background-color: #f7f7f700;
+            .ivu-collapse-content {
+                background-color: #fff0;
+                .ivu-collapse-content-box {
+                    .details-wrap {
+                        color: @border-color-theme1;
+                        font-size: @font-large;
+                        margin-left: 50px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .ivu-collapse-item.ivu-collapse-item-active>.ivu-collapse-header {
+                border-bottom: 1px solid @border-color-theme1;
+            }
+            .ivu-collapse-item {
+                border-top: 1px solid @border-color-theme1;
+                .ivu-collapse-header {
+                    color: @border-color-theme1;
+                    font-size: @font-large;
+                    line-height: 40px;
+                }
+            }
+            .ivu-collapse-item:nth-child(1) {
+                border-top: none;
+            }
+        }
+    }
+    .tunnel-collapse-wrap {
+        left: 60px;
+        height: 480px;
+        width: 610px;
+    }
+}

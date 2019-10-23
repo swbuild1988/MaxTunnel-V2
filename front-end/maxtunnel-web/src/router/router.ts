@@ -9,7 +9,7 @@ import { resolve } from 'url';
 export default [
     {
         path: '/',
-        redirect: '/OM/operatManage'
+        redirect: '/OM/tunnelIntroduct'
     },
     {
         path: '/login',
@@ -41,6 +41,12 @@ export default [
                 name: '运营管理',
                 component: (resolve: any) => 
                     require(["@/views/OM/Overview/OperatManage/OperatManage.vue"], resolve)
+            },
+            {
+                path: '/OM/tunnelIntroduct',
+                name: '管廊简介',
+                component: (resolve: any) => 
+                require(["@/views/OM/Overview/TunnelIntroduction/TunnelIntroduction.vue"], resolve) 
             }
         ]
     }   

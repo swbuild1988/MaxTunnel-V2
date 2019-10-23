@@ -1,7 +1,8 @@
 <template>
-    <div class="OperatManage-wrap"
-        :style="{background: 'url('+ operatManageIMG +') 100% 100% no-repeat', backgroundSize: '100% 100%'}"
-    >
+    <div class="OperatManage-wrap">
+        <div class="imgBG-wrap">
+            <img :src="operatManageIMG" />
+        </div>
         <Button class="btn-return" type="primary">返回</Button>
         <div class="page-title"
             :style="{background: 'url('+ pageTitleIMG +') 100% 100% no-repeat', backgroundSize: '40% 100%', backgroundPositionX: 'center'}"
