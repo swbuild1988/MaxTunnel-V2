@@ -4,6 +4,14 @@ export interface TunnelIntroductionData {
     tunnelInfo: any[]
 }
 
+export interface Day {
+    nowDate: string,
+    nowTime: string,
+    nowWeek: string,
+    safeOperatDay: Number
+
+}
+
 // VUEX TunnelIntroduction.State 参数类型
 export interface TunnelIntroductionState {
     author?: string

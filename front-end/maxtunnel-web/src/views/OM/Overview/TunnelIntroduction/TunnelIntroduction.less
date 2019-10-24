@@ -3,6 +3,7 @@
     width: 100%;
     height: 100%;
     position: relative;
+    color: @border-color-theme1; 
     .imgBG-wrap {
         position: absolute;
         width: 100%;
@@ -17,7 +18,7 @@
         font-size: 46px;
         text-align: center;
     }
-    .tunnel-collapse-wrap {
+    .tunnel-collapse-wrap, .equipment-statistics-wrap {
         position: absolute;
         top: 200px;
         .title {
@@ -29,6 +30,11 @@
                 vertical-align: middle;
             }
         }
+    }
+    .tunnel-collapse-wrap {
+        left: 60px;
+        max-height: 2.52632rem;
+        width: 610px;
         .ivu-collapse {
             border: none;
             padding-top: 15px;
@@ -37,8 +43,8 @@
                 background-color: #fff0;
                 .ivu-collapse-content-box {
                     .details-wrap {
-                        color: @border-color-theme1;
-                        font-size: @font-large;
+                        color: @border-color-theme1; 
+                        font-size: @font-medium;
                         margin-left: 50px;
                         margin-right: 10px;
                     }
@@ -60,9 +66,62 @@
             }
         }
     }
-    .tunnel-collapse-wrap {
-        left: 60px;
-        height: 480px;
+    .tunnel-collapse-wrap::-webkit-scrollbar{
+        width: 4px;
+        height: 4px;
+    }
+    .tunnel-collapse-wrap::-webkit-scrollbar-thumb{
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 0 5px rgb(27, 102, 207);
+        background: rgba(0, 0, 0, 0.2)
+    }
+    .tunnel-collapse-wrap::-webkit-scrollbar-track{
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 0 5px rgb(235, 227, 235);
+        background: rgba(0, 0, 0, 0.1)
+    }
+    .equipment-statistics-wrap {
         width: 610px;
+        right: 60px;
+        .equipment-statistics-info-wrap {
+            padding: 10px 30px;
+            .explain {
+                margin-left: 15px;
+                border-bottom: 2px solid @border-color-theme1;
+                font-size: @font-large;
+                img {
+                    vertical-align: middle;
+                    width: 4%;
+                }
+            }
+            .equipment-statistics-info {
+                margin-left: 40px;
+                font-size: @font-medium;
+                line-height: 32px;
+            }
+        }
+    }
+    .time-wrap {
+        position: absolute;
+        right: 60px;
+        bottom: 70px;
+        width: 500px;
+        height: 200px;
+        padding-top: 15px;
+        .hms-wrap, .ymd-wrap, .safe-operat-wrap {
+            line-height: 50px;
+            text-align: center;
+            font-size: 28px;
+        }
+        .hms-wrap {
+            img {
+                vertical-align: middle;
+            }
+        }
+        .safe-operat-wrap {
+            .safe-days {
+                font-size: 36px;
+            }
+        }
     }
 }

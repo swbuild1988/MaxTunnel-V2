@@ -116,6 +116,12 @@ export const formatDate = (date: any, fmt: string) => {
     return time
 }
 
+export function getFormatTime() {
+    var week = "星期" + "日一二三四五六".charAt(new Date().getDay());
+    var result = week;
+    return result;
+}
+
 // copy in the 'fx-fuli' utils
 /**
  * 校验手机号是否正确
