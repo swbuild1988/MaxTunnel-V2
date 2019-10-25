@@ -6,14 +6,17 @@ import com.bandweaver.maxtunnelem.entity.SecurityUser;
 import com.bandweaver.maxtunnelem.entity.User;
 import com.bandweaver.maxtunnelem.service.SecurityUserService;
 import com.bandweaver.maxtunnelem.service.UserService;
+import com.bandweaver.maxtunnelfeign.shiro.RemoteShiroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/user")
@@ -26,6 +29,9 @@ public class UserController {
 
     @Autowired
     private RedisUtil redisUtil;
+
+    @Autowired
+    private RemoteShiroService remoteShiroService;
 
     @RequestMapping("/login")
     public R userLogin(Integer id){
@@ -64,6 +70,18 @@ public class UserController {
     public List<SecurityUser> pageList2(){
         List<SecurityUser> userList = securityUserService.listAllUser();
         return userList;
+    }
+
+    @RequestMapping("/permissions")
+    public Set<String> getAuthorityByUser(String name){
+        Set<String> result = remoteShiroService.getAuthorityByUser(name);
+        return result;
+    }
+
+    @GetMapping("/shiroRedis")
+    public String getShiroRedis(@RequestParam("key") String key){
+        String result = remoteShiroService.getRedis(key);
+        return result;
     }
 
 }

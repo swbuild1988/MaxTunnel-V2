@@ -17,11 +17,25 @@ spring:
     host: 127.0.0.1
     port: 6379
 
+
 # mybaits 模块配置
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.bandweaver.maxtunnelshiro.entity
 
+feign:
+   hystrix:
+     enabled: true
+
+bandweaver:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: admin
+    password: admin
+    exchangeName: BANDWEAVER_MAXTUNNEL_EXCHANGE
+  redis:
+    permissionKey: permissionSet
 
 # 注册中心配置
 eureka:

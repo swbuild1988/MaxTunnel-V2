@@ -1,4 +1,4 @@
-//package com.bandweaver.maxtunnelcommon.utils;
+//package com.bandweaver.maxtunnelgateway.configura;
 //
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.data.redis.connection.DataType;
@@ -19,7 +19,7 @@
 // * @date 2018-02-24 下午03:09:50
 // * @version 1.1 (GitHub文档: https://github.com/whvcse/RedisUtil )
 // */
-//
+//@Component
 //public class RedisUtil {
 //
 //	@Autowired

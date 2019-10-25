@@ -1,7 +1,7 @@
 package com.bandweaver.maxtunnelem.service.serviceImpl;
 
-import com.bandweaver.maxtunnelcommon.utils.RedisUtil;
-import com.bandweaver.maxtunnelcommon.utils.XMLUtil;
+
+
 import com.bandweaver.maxtunnelem.entity.User;
 import com.bandweaver.maxtunnelem.mapper.UserMapper;
 import com.bandweaver.maxtunnelem.service.UserService;
