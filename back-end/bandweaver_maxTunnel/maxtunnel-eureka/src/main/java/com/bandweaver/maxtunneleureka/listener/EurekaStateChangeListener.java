@@ -36,7 +36,7 @@ public class EurekaStateChangeListener {
                 +"}已下线,下线时间-"+ time
                 +",server地址信息-" +event.getServerId();
         System.out.println(msg);
-        this.send(msg);
+       // this.send(msg);
     }
 
     public void send(String msg){
