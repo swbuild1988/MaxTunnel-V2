@@ -13,7 +13,7 @@
 
 <script lang="ts">
     import { Component, Vue, Prop } from "vue-property-decorator"
-    import { BimFaceData } from '@/types/components/bimface.interface'
+    import { BimFaceData } from '@/types/components/bimface.interface.ts'
     // import {  } from "@/components" // 组件
     
     @Component({})
@@ -30,7 +30,7 @@
             viewer3D: null,
             app: null,
             wt: null,
-            viewToken: 'c8881b84ede344a9bb3e886caa7dec1f'
+            viewToken: '176a02e90bc0424d9ff74533c260e183'
         }
 
         mounted() {
@@ -40,7 +40,7 @@
         loadBIM() {
             let options = new BimfaceSDKLoaderConfig();
             options.viewToken = this.data.viewToken;
-			BimfaceSDKLoader.load(options, this.successCallback, this.failureCallback);
+	        BimfaceSDKLoader.load(options, this.successCallback, this.failureCallback);
         }
 
         successCallback(viewMetaData: any) {
@@ -50,7 +50,7 @@
                 viewConfig.domElement = domShow;    
                 this.data.viewer3D = new Glodon.Bimface.Viewer.Viewer3D(viewConfig); 
                 // 添加待显示的模型
-				this.data.viewer3D.addView(this.data.viewToken);
+		this.data.viewer3D.addView(this.data.viewToken);
 				let config = new Glodon.Bimface.Plugins.Walkthrough.WalkthroughConfig();
 				config.viewer = this.data.viewer3D;
                 this.data.wt = new Glodon.Bimface.Plugins.Walkthrough.Walkthrough(config);
@@ -65,12 +65,12 @@
 				this.data.viewer3D.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ViewAdded, () => {
                 //自适应屏幕大小
                     let _this = this
-                    window.onresize = function() {
+                    window.onresize = () => {
                         _this.data.viewer3D.resize(document.documentElement.clientWidth, document.documentElement.clientHeight - 40)
                 }
 				// 调用viewer3D对象的Method，可以继续扩展功能
 				// 渲染3D模型
-				    this.data.viewer3D.render();
+				this.data.viewer3D.render();
 				}); 
             }
         }
@@ -125,7 +125,7 @@
     }
     .model {flex: 1}
     .button {
-        margin: 5px auto; 
+        margin: 1vmin auto; 
         width: 16vmin; 
         height: 5vmin; 
         background: #11DAB7; 

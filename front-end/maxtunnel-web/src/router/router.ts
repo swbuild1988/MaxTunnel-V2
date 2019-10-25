@@ -25,6 +25,12 @@ export default [
             require(["@/views/BM/ProjectSurvey/TunnelInfo/TunnelInfo.vue"], resolve),
     },
     {
+        path: '/BV/BIM/bim',
+        name: '大屏信息展示-BIM',
+        // component: () => import('@/views/BM/ProjectSurvey/TunnelInfo/TunnelInfo.vue')
+        component: (resolve: any) => require(["@/views/BM/BIM/bim/bim.vue"], resolve),
+    },
+    { 
         path: '/OM',
         name: 'OM',
         component: (resolve: any) => 
