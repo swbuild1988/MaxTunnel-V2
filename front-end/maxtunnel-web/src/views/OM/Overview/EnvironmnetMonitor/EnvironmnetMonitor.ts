@@ -1,10 +1,9 @@
-import { Component, Vue, Watch } from "vue-property-decorator"
+import { Component, Vue } from 'vue-property-decorator'
 import { EnvironmnetMonitorData, SecurityMonitorData } from '@/types/views/EnvironmnetMonitor.interface'
 import { Collapse, Button } from 'view-design'
 import Panel from 'view-design/src/components/collapse/panel.vue'
 import { EnvironmentMonitorService } from '@/services/environmentMonitor.ts'
 import BrokenLine from '@/components/BrokenLine/BrokenLine.vue'
-import { init } from 'echarts'
 
 Vue.component('Collapse', Collapse)
 Vue.component('Panel', Panel)

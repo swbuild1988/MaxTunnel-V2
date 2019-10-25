@@ -1,6 +1,6 @@
 import { Component, Vue } from "vue-property-decorator"
 import { BimData } from '@/types/views/bim.interface'
-import Bim from "@/components/bim/bim" // 组件
+import Bim from "@/components/bim/bim.vue" // 组件
 
 @Component({
     components: {

@@ -13,7 +13,7 @@
 
 <script lang="ts">
     import { Component, Vue, Prop } from "vue-property-decorator"
-    import { BimFaceData } from '@/types/components/bimface.interface'
+    import { BimFaceData } from '@/types/components/bimface.interface.ts'
     // import {  } from "@/components" // 组件
     
     @Component({})
@@ -40,7 +40,7 @@
         loadBIM() {
             let options = new BimfaceSDKLoaderConfig();
             options.viewToken = this.data.viewToken;
-			BimfaceSDKLoader.load(options, this.successCallback, this.failureCallback);
+	        BimfaceSDKLoader.load(options, this.successCallback, this.failureCallback);
         }
 
         successCallback(viewMetaData: any) {
@@ -50,12 +50,12 @@
                 viewConfig.domElement = domShow;    
                 this.data.viewer3D = new Glodon.Bimface.Viewer.Viewer3D(viewConfig); 
                 // 添加待显示的模型
-				this.data.viewer3D.addView(this.data.viewToken);
+		this.data.viewer3D.addView(this.data.viewToken);
 				let config = new Glodon.Bimface.Plugins.Walkthrough.WalkthroughConfig();
 				config.viewer = this.data.viewer3D;
                 this.data.wt = new Glodon.Bimface.Plugins.Walkthrough.Walkthrough(config);
                 
-                this.data.viewer3D.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ComponentsSelectionChanged,(componentData: any) => {
+                this.data.viewer3D.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ComponentsSelectionChanged, (componentData: any) => {
 
 					if (componentData && componentData.objectId) {
 						console.log(componentData);
@@ -65,8 +65,8 @@
 				this.data.viewer3D.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ViewAdded, () => {
                 //自适应屏幕大小
                     let _this = this
-                    window.onresize = function(){
-                        _this.data.viewer3D.resize(document.documentElement.clientWidth,document.documentElement.clientHeight-40)
+                    window.onresize = () => {
+                        _this.data.viewer3D.resize(document.documentElement.clientWidth, document.documentElement.clientHeight - 40)
                 }
 				// 调用viewer3D对象的Method，可以继续扩展功能
 				// 渲染3D模型

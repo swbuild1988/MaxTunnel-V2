@@ -1,4 +1,4 @@
-import { Component, Vue } from "vue-property-decorator"
+import { Component, Vue } from 'vue-property-decorator'
 import { OperatManageData } from '@/types/views/OperatManage.interface'
 import { Button } from 'view-design'
 import MultiLine from '@/components/MultipleLineChart/MultipleLineChart.vue'
@@ -19,7 +19,7 @@ export default class About extends Vue {
     // data
     data: OperatManageData = {
         customerInfo: [
-            { customerName: '上海波汇', pipeNum: 6 },
+            {customerName: '上海波汇', pipeNum: 6 },
             { customerName: '山西波汇', pipeNum: 5 },
             { customerName: '中国移动', pipeNum: 2 },
             { customerName: '中国石化', pipeNum: 8 },

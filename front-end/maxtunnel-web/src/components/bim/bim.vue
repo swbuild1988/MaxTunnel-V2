@@ -9,8 +9,8 @@
 <script lang="ts">
     import { Component, Vue, Prop } from "vue-property-decorator"
     import { BimData } from '@/types/components/bim.interface'
-    import BimFace from "@/components/bim/BimFace" // 组件
-    import SuperMap from "@/components/bim/SuperMap"
+    import BimFace from "@/components/bim/BimFace.vue" // 组件
+    import SuperMap from "@/components/bim/SuperMap.vue"
 
     @Component({ 
         components: {
@@ -33,7 +33,7 @@
 
         // mounted() {
         // }
-        change(){
+        change() {
             this.data.bimState = this.data.bimState === 2 ? 1 : 2
         }
     }

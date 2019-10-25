@@ -26,8 +26,8 @@
             this.loadSuperMap()
         }
 
-        loadSuperMap(){
-            var viewer = new Cesium.Viewer('cesiumContainer')
+        loadSuperMap() {
+            let viewer = new Cesium.Viewer('cesiumContainer')
         }
 
     }
