@@ -30,7 +30,7 @@
             viewer3D: null,
             app: null,
             wt: null,
-            viewToken: 'ab3b4e6c3cad4d3395ed654e1d6547ad'
+            viewToken: '176a02e90bc0424d9ff74533c260e183'
         }
 
         mounted() {
