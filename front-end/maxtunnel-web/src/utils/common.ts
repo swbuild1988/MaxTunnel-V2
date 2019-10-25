@@ -117,8 +117,8 @@ export const formatDate = (date: any, fmt: string) => {
 }
 
 export function getFormatTime() {
-    var week = "星期" + "日一二三四五六".charAt(new Date().getDay());
-    var result = week;
+    let week = "星期" + "日一二三四五六".charAt(new Date().getDay());
+    let result = week;
     return result;
 }
 

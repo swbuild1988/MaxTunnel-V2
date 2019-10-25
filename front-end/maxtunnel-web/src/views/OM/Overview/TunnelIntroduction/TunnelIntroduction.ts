@@ -43,10 +43,10 @@ export default class About extends Vue {
         { eKey: '风速仪', eVal: 3 }
     ]
 
-    totalEquipment: Number = 0
+    totalEquipment: number = 0
     time: string = ''
     data: string = ''
-    safeOperatNum: Number = 0
+    safeOperatNum: number = 0
     Day: Day = {
         nowDate: '',
         nowTime: '',
@@ -68,7 +68,7 @@ export default class About extends Vue {
     }
     getTime() {
         let _this = this
-        setInterval(function(){ 
+        setInterval(() => { 
             let date = new Date();
             let year = formatDate(date, 'yyyy');
             let Month = formatDate(date, 'MM');
@@ -79,7 +79,7 @@ export default class About extends Vue {
             let second = formatDate(date, 'ss');
             _this.Day.nowTime = hour + ':' + minute + ':' + second;
             _this.Day.nowWeek = getFormatTime();
-         }, 1000);
+         }, 1000 );
     }
     
 }

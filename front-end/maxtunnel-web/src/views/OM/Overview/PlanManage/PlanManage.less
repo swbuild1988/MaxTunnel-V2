@@ -1,0 +1,166 @@
+
+.PlanManage-wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: @border-color-theme1; 
+    .imgBG-wrap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .page-title {
+        font-size: 46px;
+        text-align: center;
+    }
+    .alarm-statistics-wrap, .simulate-plan-wrap {
+        position: absolute;
+        top: 150px;
+        width: 600px;
+        .title {
+            font-size: 18px;
+            margin-top: 20px;
+            padding-left: 30px;
+            color: #00ffeb;
+            .guide-icon {
+                vertical-align: middle;
+            }
+        }
+        .details-wrap {
+            margin-left: 40px;
+            .details-title, .details-info, .details-total {
+                display: flex;
+                line-height: 35px;
+                div {
+                    flex: 0 0 16.66%;
+                    text-align: center;
+                }
+                :nth-child(2) {
+                    color: #2aff57;
+                }
+                :nth-child(3) {
+                    color: #ff3d3d;
+                }
+                :nth-child(4) {
+                    color: #e8ff50;
+                }
+                :nth-child(5) {
+                    color: #00fcf9;
+                }
+                :nth-child(6) {
+                    color: #d04df1;
+                }
+            }
+            .details-title, .details-total {
+                font-size: @font-large-s;
+            }
+            .details-info {
+                font-size: @font-medium;
+            }
+            .details-info-wrap {
+                max-height: 300px;
+                overflow: auto;
+            }
+            .details-info-wrap::-webkit-scrollbar{
+                width: 4px;
+                height: 4px;
+            }
+            .details-info-wrap::-webkit-scrollbar-thumb{
+                border-radius: 5px;
+                box-shadow: inset 0 0 5px rgb(27, 102, 207);
+                background: rgba(0, 0, 0, 0.2)
+            }
+            .details-info-wrap::-webkit-scrollbar-track{
+                border-radius: 4px;
+                box-shadow: inset 0 0 5px rgb(235, 227, 235);
+                background: rgba(0, 0, 0, 0.1)
+            }
+        }
+        .ivu-select {
+            color: @border-color-theme1;
+            .ivu-select-selection {
+                background-color: #fff0;
+                border: 0.00526rem solid @border-color-theme1;
+                height: @small-line-height;
+                .ivu-select-selected-value {
+                    height: @small-line-height;
+                    line-height: @small-line-height;
+                    font-size: @font-little ;
+                }
+                .ivu-select-arrow {
+                    color: @border-color-theme1;
+                    font-size: 20px;
+                }
+            }
+            .ivu-select-dropdown {
+                background-color: #479696;
+                .ivu-select-item {
+                    color: #fff;
+                }
+                .ivu-select-item-selected:hover, .ivu-select-item-focus, .ivu-select-item:hover {
+                    color: #fff;
+                    background-color: #057583;
+                }
+            }
+        }
+    }
+    .alarm-statistics-wrap {
+        left: 60px;
+    }
+    .simulate-plan-wrap {
+        right: 60px;
+        width: 250px;
+        .load-plan-wrap, .plan-simulate-wrap {
+            margin: 10px 30px;
+            .title {
+                font-weight: 700;
+                text-align: center;
+                padding-left: 0;
+                font-size: 15px;
+                line-height: 32px;
+            }
+        }
+        .load-plan-wrap {
+            .load-plan-details {
+                height: @small-line-height;
+                line-height: @small-line-height;
+                font-size: 14px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                padding-left: 8px;
+                padding-right: 24px;
+                text-align: center;
+                border: 0.00526rem solid @border-color-theme1;
+                border-radius: 4px;
+                margin-top: 4px;
+            }
+        }
+        .plan-simulate-wrap {
+            .plan-simulate-btn {
+                background-color: #fff0;
+                color: @border-color-theme1;
+                border-color: @border-color-theme1;
+            }
+            .active {
+                background: #057583;
+                color: #fff;
+            }
+            .ivu-btn {
+                height: @small-line-height;
+            }
+            .simulate-speed {
+                margin-top: 4px;
+                text-align: center;
+                .ivu-select {
+                    width: 100px;
+                }
+            }
+        }
+    }
+}

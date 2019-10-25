@@ -27,8 +27,9 @@
         }
 
         drawMultiLine() {
-            this.myChart = (this as any).$echarts.init(document.getElementById(this.id) as HTMLCanvasElement),
-            this.options = {
+            let _this = this
+            _this.myChart = (this as any).$echarts.init(document.getElementById(this.id) as HTMLCanvasElement),
+            _this.options = {
                 title: {
                     text: this.data.title,
                     left: 'center',

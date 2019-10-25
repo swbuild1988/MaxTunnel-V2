@@ -7,7 +7,7 @@
 <script lang="ts">
     import { Component, Vue, Prop } from "vue-property-decorator"
     import { BimData } from '@/types/components/bim.interface'
-    import BimFace from "@/components/bim/BimFace" // 组件
+    import BimFace from "@/components/bim/BimFace.vue" // 组件
 
     @Component({ 
         components: {

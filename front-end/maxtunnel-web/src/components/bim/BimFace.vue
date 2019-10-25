@@ -27,7 +27,7 @@
         // data
         data: BimFaceData = {
             componentName: 'BimFace',
-            view3D: null,
+            viewer3D: null,
             app: null,
             wt: null,
             viewToken: 'c8881b84ede344a9bb3e886caa7dec1f'
@@ -55,7 +55,7 @@
 				config.viewer = this.data.viewer3D;
                 this.data.wt = new Glodon.Bimface.Plugins.Walkthrough.Walkthrough(config);
                 
-                this.data.viewer3D.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ComponentsSelectionChanged,(componentData: any) => {
+                this.data.viewer3D.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ComponentsSelectionChanged, (componentData: any) => {
 
 					if (componentData && componentData.objectId) {
 						console.log(componentData);
@@ -65,8 +65,8 @@
 				this.data.viewer3D.addEventListener(Glodon.Bimface.Viewer.Viewer3DEvent.ViewAdded, () => {
                 //自适应屏幕大小
                     let _this = this
-                    window.onresize=function(){
-                        _this.data.viewer3D.resize(document.documentElement.clientWidth,document.documentElement.clientHeight-40)
+                    window.onresize = function() {
+                        _this.data.viewer3D.resize(document.documentElement.clientWidth, document.documentElement.clientHeight - 40)
                 }
 				// 调用viewer3D对象的Method，可以继续扩展功能
 				// 渲染3D模型

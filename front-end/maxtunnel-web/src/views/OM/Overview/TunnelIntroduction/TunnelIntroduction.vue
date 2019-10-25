@@ -13,7 +13,7 @@
                 <img :src="guideIcon" class="guide-icon" />
                 管廊简介：
             </div>
-            <Collapse v-model="TData.value" accordion>
+            <Collapse v-model="TData.value">
                 <Panel :name=item.val v-for="(item, index) in TData.tunnelInfo" :key="index">
                     <span>
                         <img :src="tunnelIcon" />

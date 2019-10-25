@@ -8,7 +8,7 @@ export interface Day {
     nowDate: string,
     nowTime: string,
     nowWeek: string,
-    safeOperatDay: Number
+    safeOperatDay: number
 
 }
 

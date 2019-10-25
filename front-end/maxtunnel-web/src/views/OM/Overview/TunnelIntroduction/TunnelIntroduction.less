@@ -33,12 +33,15 @@
     }
     .tunnel-collapse-wrap {
         left: 60px;
-        max-height: 2.52632rem;
         width: 610px;
+        // max-height: 500px;
+        // overflow: hidden;
         .ivu-collapse {
             border: none;
             padding-top: 15px;
             background-color: #f7f7f700;
+            max-height: 340px;
+            overflow: auto;
             .ivu-collapse-content {
                 background-color: #fff0;
                 .ivu-collapse-content-box {
@@ -66,18 +69,18 @@
             }
         }
     }
-    .tunnel-collapse-wrap::-webkit-scrollbar{
+    .ivu-collapse::-webkit-scrollbar{
         width: 4px;
         height: 4px;
     }
-    .tunnel-collapse-wrap::-webkit-scrollbar-thumb{
+    .ivu-collapse::-webkit-scrollbar-thumb{
         border-radius: 5px;
-        -webkit-box-shadow: inset 0 0 5px rgb(27, 102, 207);
+        box-shadow: inset 0 0 5px rgb(27, 102, 207);
         background: rgba(0, 0, 0, 0.2)
     }
-    .tunnel-collapse-wrap::-webkit-scrollbar-track{
+    .ivu-collapse::-webkit-scrollbar-track{
         border-radius: 4px;
-        -webkit-box-shadow: inset 0 0 5px rgb(235, 227, 235);
+        box-shadow: inset 0 0 5px rgb(235, 227, 235);
         background: rgba(0, 0, 0, 0.1)
     }
     .equipment-statistics-wrap {
