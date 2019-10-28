@@ -27,7 +27,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.bandweaver</groupId>
-			<artifactId>maxtunnel-common</artifactId>
+			<artifactId>maxtunnel-base</artifactId>
 			<version>1.0.0</version>
 		</dependency>
         <dependency>
