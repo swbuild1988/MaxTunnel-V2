@@ -14,7 +14,7 @@
 		"@types/node": "^12.7.12",
 		"@types/vue": "^2.0.0",
 		"amfe-flexible": "^2.2.1",
-		"axios": "^0.19.0",
+		"axios": "^0.21.1",
 		"core-js": "^2.6.5",
 		"echarts": "^4.3.0",
 		"iview": "^3.5.1",
